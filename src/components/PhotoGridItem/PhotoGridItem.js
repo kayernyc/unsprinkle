@@ -11,7 +11,7 @@ const PhotoGridItem = ({ id, src, alt, tags }) => {
       <Picture>
         <source
           type="image/avif"
-          srcset={`
+          srcSet={`
           ${baseFileName}.avif 1x,
           ${baseFileName}@2x.avif 2x,
           ${baseFileName}@3x.avif 3x
@@ -19,7 +19,7 @@ const PhotoGridItem = ({ id, src, alt, tags }) => {
         />
         <source
           type="image/png"
-          srcset={`
+          srcSet={`
           ${baseFileName}.png 1x,
           ${baseFileName}@2x.png 2x,
           ${baseFileName}@3x.png 3x
@@ -27,7 +27,7 @@ const PhotoGridItem = ({ id, src, alt, tags }) => {
         />
         <source
           type="image/jpg"
-          srcset={`
+          srcSet={`
           ${baseFileName}.jpg 1x,
           ${baseFileName}@2x.jpg 2x,
           ${baseFileName}@3x.jpg 3x
@@ -52,9 +52,9 @@ const Article = styled.article`
   `
 
 const Anchor = styled.a`
-  text-decoration: none;
   color: inherit;
   outline-offset: 4px;
+  text-decoration: none;
 `;
 
 const Picture = styled.picture`
@@ -75,14 +75,19 @@ const Tags = styled.ul`
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
-`;
+  `;
 
 const Tag = styled.li`
-  padding: 4px 8px;
   background: var(--color-gray-300);
+  color: var(--color-gray-800);
+  display: -webkit-box;
   font-size: 0.875rem;
   font-weight: 475;
-  color: var(--color-gray-800);
-`;
+  overflow: hidden;
+  padding: 4px 8px;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 1;    
+  -webkit-box-orient: vertical;
+  `;
 
 export default PhotoGridItem;

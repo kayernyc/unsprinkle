@@ -7,7 +7,7 @@ const Hero = () => {
       <HeroImage>
         <source
           type="image/avif"
-          srcset={`
+          srcSet={`
             /images/hero-img.avif 1x,
             /images/hero-img@2x.avif 2x,
             /images/hero-img@3x.avif 3x,
@@ -15,7 +15,7 @@ const Hero = () => {
         />
         <source
           type="image/jpg"
-          srcset={`
+          srcSet={`
             /images/hero-img.jpg 1x,
             /images/hero-img@2x.jpg 2x,
             /images/hero-img@3x.jpg 3x,
@@ -28,7 +28,7 @@ const Hero = () => {
           src="/images/hero-img.jpg"
         />
       </HeroImage> 
-      <Swoop src="/swoop.svg" />
+      <Swoop src="/swoop.svg" alt=""/>
     </Wrapper>
   );
 };
